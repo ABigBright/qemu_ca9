@@ -1,0 +1,9 @@
+qemu-system-arm -M vexpress-a9 \
+	-cpu cortex-a9 \
+	-m 512 \
+	-serial stdio \
+	-kernel zImage \
+	-sd rootfs_ca9.ext2.driver_test \
+	-append "console=ttyAMA0 init=/linuxrc root=/dev/mmcblk0 rw" \
+	-dtb vexpress-v2p-ca9.dtb \
+	-netdev tap,id=nd0,ifname=tap0,script=tap_ifup_script,downscript=no -device virtio-net-device,netdev=nd0

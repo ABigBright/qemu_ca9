@@ -1,0 +1,3 @@
+setenv bootargs "noinitrd root=/dev/mmcblk0 rw init=/linuxrc console=ttyAMA0"
+setenv bootcmd "ext2load mmc 0 60008000 /boot/uImage;ext2load mmc 0 65000000 /boot/ca9.dtb;bootm 60008000 - 65000000"
+saveenv

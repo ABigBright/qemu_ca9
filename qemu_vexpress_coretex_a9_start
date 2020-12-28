@@ -1,0 +1,8 @@
+qemu-system-arm -M vexpress-a9 \
+	-cpu cortex-a9 \
+	-m 512 \
+	-serial stdio \
+	-kernel zImage \
+	-sd rootfs_ca9.ext2 \
+	-append "console=ttyAMA0 init=/linuxrc root=/dev/mmcblk0 rw" \
+	-dtb vexpress-v2p-ca9.dtb
